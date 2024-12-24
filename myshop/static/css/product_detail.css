@@ -1,0 +1,109 @@
+.product-detail {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  flex: 1;
+  padding-right: 30px;
+  max-width: 600px;
+}
+
+.product-info h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.product-info p strong {
+  font-weight: bold;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.add-to-cart-btn,
+.out-of-stock-btn {
+  width: 200px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+
+.out-of-stock-btn {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+}
+
+.out-of-stock-btn:disabled {
+  background-color: #6c757d;
+}
+
+/* Стили для блока "В наличии" */
+.product-info p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-info p {
+  font-size: 16px;
+}
+
+.product-info .in-stock {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.product-info .out-of-stock {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+}
