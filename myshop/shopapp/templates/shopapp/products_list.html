@@ -1,0 +1,33 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+<title>
+    {% block title %}
+        Products list
+    {% endblock %}
+</title>
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'products_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h1>Product List</h1>
+    <div class="product-list-container">
+        <div class="product-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <div class="product-info">
+                        <h2><a href="{% url 'shopapp:product_detail' pk=product.pk %}">{{ product.name }}</a></h2>
+                        <p>{{ product.description|truncatechars:100 }}</p>
+                        <p class="product-price">${{ product.price }}</p>
+                        <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

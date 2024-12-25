@@ -14,7 +14,7 @@
   <div class="product-detail">
     <div class="product-info">
       <h1>{{ product.name }}</h1>
-      <p><strong>Цена:</strong> {{ product.price }} ₽</p>
+      <p><strong>Цена:</strong> {{ product.price }} $</p>
       <p><strong>Описание:</strong> {{ product.description }}</p>
       <p><strong>Категория:</strong> {{ product.category.name }}</p>
       <p><strong>В наличии:</strong> {% if product.is_in_stock %}Да{% else %}Нет{% endif %}</p>
@@ -30,4 +30,7 @@
       {% endif %}
     </div>
   </div>
+<div class="product-actions">
+    <a href="{% url 'shopapp:products_list' %}">Back to products list</a>
+</div>
 {% endblock %}
