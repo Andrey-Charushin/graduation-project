@@ -21,7 +21,25 @@
       {% if product.image %}
         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
       {% endif %}
+      <div class="review">
+        {% if product.review.all %}
+        <p><strong>Отзывы покупателей:</strong></p>
+          {% for review in product.review.all %}
+            <div class="review-item">
+              <p><strong>Пользователь: </strong>{{ review.user.username }}</p>
+              <p>Рейтинг: {{ review.rating }}</p>
+              <p>Создано: {{ review.created_at }}</p>
+              <p>Текст: {{ review.review_text }}</p>
+            </div>
+
+          {% endfor %}
+          {% else %}
+          <p>На этот товар ещё нет отзывов</p>
+        {% endif %}
+      </div>
     </div>
+
+
     <div class="product-actions">
       {% if product.is_in_stock %}
         <button class="add-to-cart-btn">Добавить в корзину</button>
@@ -30,7 +48,11 @@
       {% endif %}
     </div>
   </div>
-<div class="product-actions">
-    <a href="{% url 'shopapp:products_list' %}">Back to products list</a>
-</div>
+  <div class="product-actions">
+    <button class="back-to-button">
+      <a href="{% url 'shopapp:products_list' %}">Back to products list</a>
+    </button>
+  </div>
+
+
 {% endblock %}

@@ -8,11 +8,13 @@ class ProductDetailsView(DetailView):
     """Представление для отображения деталей товара"""
 
     template_name = 'shopapp/product_detail.html'
-    queryset = Product.objects.all()
+    queryset = Product.objects.select_related('category').prefetch_related('review')
     context_object_name = 'product'
 
 
 class ProductsListView(ListView):
+    """Представление для отображения списка товаров"""
+
     template_name = 'shopapp/products_list.html'
-    queryset = Product.objects.all()
+    queryset = Product.objects.select_related('category').prefetch_related('review')
     context_object_name = 'products'

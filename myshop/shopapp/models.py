@@ -32,6 +32,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
     def __str__(self):
         return self.name
 
@@ -58,8 +59,12 @@ class Order(models.Model):
 
 
 class Review(models.Model):
+    class Meta:
+        ordering = ["-created_at",]
+        verbose_name_plural = 'reviews'
+
     user = models.ForeignKey('auth.User', on_delete=models.PROTECT)
-    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='review')
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     review_text = models.TextField(max_length=255, null=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

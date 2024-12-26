@@ -29,8 +29,9 @@ h1 {
 
 /* Карточка товара */
 .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
+    display: grid;
+    background: #e1cfcf;
+    border: 2px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,8 +53,11 @@ h1 {
 
 /* Информация о товаре */
 .product-info {
-    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
+
 
 .product-info h2 {
     font-size: 18px;
@@ -75,21 +79,43 @@ h1 {
 }
 
 /* Кнопка добавления в корзину */
+.add-to-cart-btn,
+.out-of-stock-btn {
+  width: 200px;
+  padding: 12px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
 .add-to-cart-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background 0.2s;
+  background-color: #28a745;
+  color: white;
 }
 
 .add-to-cart-btn:hover {
-    background: #0056b3;
+  background-color: #218838;
+}
+
+.out-of-stock-btn {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+}
+
+.out-of-stock-btn:disabled {
+  background-color: #6c757d;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
 }

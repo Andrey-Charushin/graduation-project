@@ -15,7 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = "pk", "name", "description"
     list_display_links = "pk", "name"
-    ordering = "name",
+    ordering = "pk", "name",
     search_fields = "name", "description"
 
 

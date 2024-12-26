@@ -13,8 +13,16 @@
 
 </head>
 <body>
+    {% block header %}
+        This is base header
+    {% endblock %}
+
     {% block content %}
         Base content
+    {% endblock %}
+
+    {% block footer %}
+        This is base footer
     {% endblock %}
 </body>
 </html>
