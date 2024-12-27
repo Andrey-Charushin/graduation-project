@@ -32,13 +32,32 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return self.name
 
     def is_in_stock(self):
         """Проверка наличия товара в наличии"""
         return self.stock > 0
+
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="cart")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Cart of {self.user.username}"
+
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name="items")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.quantity} x {self.product.name}"
+
+    def total_price(self):
+        return self.product.price * self.quantity
 
 
 class Order(models.Model):
@@ -60,7 +79,7 @@ class Order(models.Model):
 
 class Review(models.Model):
     class Meta:
-        ordering = ["-created_at",]
+        ordering = ["-created_at", ]
         verbose_name_plural = 'reviews'
 
     user = models.ForeignKey('auth.User', on_delete=models.PROTECT)

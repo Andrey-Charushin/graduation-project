@@ -1,0 +1,169 @@
+header {
+    position: relative;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+header .navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .navigation ul li {
+    margin: 0 15px;
+}
+
+header .navigation ul li a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+header .navigation ul li a:hover {
+    color: #007bff;
+}
+
+header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .search-form {
+    display: flex;
+    align-items: center;
+}
+
+header .search-form input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+header .search-form button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+header .cart-icon,
+header .profile-icon {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+header .cart-icon:hover,
+header .profile-icon:hover {
+    color: #007bff;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: #343a40; /* Темный фон */
+    color: #fff; /* Белый текст */
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex; /* Выровнять секции горизонтально */
+    justify-content: space-between; /* Разделить секции равномерно */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-section {
+    flex: 1; /* Равномерное распределение ширины секций */
+    margin: 0 10px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #f8f9fa;
+    border-bottom: 2px solid #495057; /* Подчеркивание заголовков */
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #adb5bd; /* Серый текст ссылок */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f8f9fa; /* При наведении белый цвет */
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Легкое увеличение при наведении */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #495057; /* Линия над нижним блоком */
+    font-size: 14px;
+    color: #adb5bd;
+}

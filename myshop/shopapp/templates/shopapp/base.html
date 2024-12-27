@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-            Base title
+        Base title
         {% endblock %}
     </title>
     {% block head %}
-        Base head
+    Base head
     {% endblock %}
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shop-base.css' %}">
 </head>
 <body>
+<header>
     {% block header %}
-        This is base header
+    <div class="container">
+        <div class="logo">
+            <a href="/"><img src="/static/images/logo.png" alt="Логотип"></a>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/products/">Каталог</a></li>
+                <li><a href="/about/">О нас</a></li>
+                <li><a href="/contact/">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <form action="/search/" method="get" class="search-form">
+                <input type="text" name="query" placeholder="Поиск товаров...">
+                <button type="submit">🔍</button>
+            </form>
+            <a href="{% url 'shopapp:cart_detail' %}" class="cart-icon">🛒</a>
+            <a href="{% url 'accountsapp:profile' %}" class="profile-icon">👤</a>
+        </div>
+    </div>
     {% endblock %}
+</header>
 
-    {% block content %}
-        Base content
-    {% endblock %}
 
-    {% block footer %}
-        This is base footer
-    {% endblock %}
+{% block content %}
+Base content
+{% endblock %}
+
+<footer>
+    <footer>
+        {% block footer %}
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>О компании</h4>
+                <ul>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/contact">Контакты</a></li>
+                    <li><a href="/privacy-policy">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Помощь</h4>
+                <ul>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/support">Поддержка</a></li>
+                    <li><a href="/delivery">Доставка и возврат</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <p>Email: support@store.com</p>
+                <div class="social-icons">
+                    <a href="#"><img src="/icons/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="/icons/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="/icons/twitter.svg" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Интернет-магазин. Все права защищены.</p>
+        </div>
+        {% endblock %}
+    </footer>
+
+
 </body>
 </html>

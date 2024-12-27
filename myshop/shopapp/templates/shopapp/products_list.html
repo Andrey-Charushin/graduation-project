@@ -13,13 +13,11 @@
 {% endblock %}
 
 {% block content %}
-
 <h1>Product List</h1>
 <div class="product-list-container">
     <div class="product-grid">
         {% for product in products %}
         <div class="product-card">
-
             <div>
                 <h2><a href="{% url 'shopapp:product_detail' pk=product.pk %}"
                        style="text-decoration: none; color:black">
@@ -39,10 +37,9 @@
                 <button class="out-of-stock-btn" disabled>Товар отсутствует</button>
                 {% endif %}
             </div>
-
         </div>
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
+

@@ -3,56 +3,59 @@
 {% load static %}
 
 {% block title %}
-  {{ product.name }}
+{{ product.name }}
 {% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}">
 {% endblock %}
 
 {% block content %}
-  <div class="product-detail">
+<div class="product-detail">
     <div class="product-info">
-      <h1>{{ product.name }}</h1>
-      <p><strong>Цена:</strong> {{ product.price }} $</p>
-      <p><strong>Описание:</strong> {{ product.description }}</p>
-      <p><strong>Категория:</strong> {{ product.category.name }}</p>
-      <p><strong>В наличии:</strong> {% if product.is_in_stock %}Да{% else %}Нет{% endif %}</p>
-      {% if product.image %}
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-      {% endif %}
-      <div class="review">
-        {% if product.review.all %}
-        <p><strong>Отзывы покупателей:</strong></p>
-          {% for review in product.review.all %}
-            <div class="review-item">
-              <p><strong>Пользователь: </strong>{{ review.user.username }}</p>
-              <p>Рейтинг: {{ review.rating }}</p>
-              <p>Создано: {{ review.created_at }}</p>
-              <p>Текст: {{ review.review_text }}</p>
-            </div>
+        <form action="{% url 'shopapp:products_list' %}">
 
-          {% endfor %}
-          {% else %}
-          <p>На этот товар ещё нет отзывов</p>
+            <button class="back-to-button">
+                << Назад
+            </button>
+        </form>
+
+        <h1>{{ product.name }}</h1>
+        <p><strong>Цена:</strong> {{ product.price }} $</p>
+        <p><strong>Описание:</strong> {{ product.description }}</p>
+        <p><strong>Категория:</strong> {{ product.category.name }}</p>
+        <p><strong>В наличии:</strong> {% if product.is_in_stock %}Да{% else %}Нет{% endif %}</p>
+        {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
         {% endif %}
-      </div>
+
     </div>
 
 
     <div class="product-actions">
-      {% if product.is_in_stock %}
+        {% if product.is_in_stock %}
         <button class="add-to-cart-btn">Добавить в корзину</button>
-      {% else %}
+        {% else %}
         <button class="out-of-stock-btn" disabled>Товар отсутствует</button>
-      {% endif %}
+        {% endif %}
     </div>
-  </div>
-  <div class="product-actions">
-    <button class="back-to-button">
-      <a href="{% url 'shopapp:products_list' %}">Back to products list</a>
-    </button>
-  </div>
+</div>
+<div class="review">
+    {% if product.review.all %}
+    <p><strong>Отзывы покупателей:</strong></p>
+    {% for review in product.review.all %}
+    <div class="review-item">
+        <p><strong>Пользователь: </strong>{{ review.user.username }}</p>
+        <p>Рейтинг: {{ review.rating }}</p>
+        <p>Создано: {{ review.created_at }}</p>
+        <p>Текст: {{ review.review_text }}</p>
+    </div>
+
+    {% endfor %}
+    {% else %}
+    <p>На этот товар ещё нет отзывов</p>
+    {% endif %}
+</div>
 
 
 {% endblock %}

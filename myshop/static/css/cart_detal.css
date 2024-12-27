@@ -1,0 +1,93 @@
+.cart-container {
+    display: grid;
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок корзины */
+.cart-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Таблица товаров в корзине */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+.cart-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Колонка изображения товара */
+.cart-item-image img {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Кнопки управления */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-buttons .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-buttons .btn-primary {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.cart-buttons .btn-primary:hover {
+    background-color: #218838;
+}
+
+.cart-buttons .btn-secondary {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.cart-buttons .btn-secondary:hover {
+    background-color: #c82333;
+}
+
+/* Итоговая сумма */
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #333;
+}

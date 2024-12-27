@@ -9,12 +9,13 @@ content {
 
 h1 {
     text-align: center;
-    margin: 20px 0;
+    margin: 100px 0 20px 0;
     color: #444;
 }
 
 /* Контейнер для списка товаров */
 .product-list-container {
+    padding-top: 70px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
