@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 
 
 from .views import (
+    CategoriesListView,
+    ProductsByCategoryListView,
     ProductDetailsView,
     ProductsListView,
     cart_detail,
@@ -14,8 +16,10 @@ from .views import (
 app_name = 'shopapp'
 
 urlpatterns = [
-    path('product/<int:pk>/', ProductDetailsView.as_view(), name='product_detail'),
+    path('', CategoriesListView.as_view(), name='categories'),
     path('products/', ProductsListView.as_view(), name='products_list'),
+    path('products/<int:pk>', ProductsByCategoryListView.as_view(), name='category_products'),
+    path('product/<int:pk>/', ProductDetailsView.as_view(), name='product_detail'),
     path("cart/", cart_detail, name="cart_detail"),
     path("cart/add/<int:product_id>/", add_to_cart, name="add_to_cart"),
     path("cart/remove/<int:item_id>/", remove_from_cart, name="remove_from_cart"),

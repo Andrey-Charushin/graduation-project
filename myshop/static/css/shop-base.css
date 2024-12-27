@@ -85,10 +85,7 @@ header .profile-icon:hover {
 }
 
 footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    margin-top: auto;
     height: auto;
     background-color: #343a40; /* Темный фон */
     color: #fff; /* Белый текст */

@@ -1,0 +1,123 @@
+/* Общие стили */
+content {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 100px 0 20px 0;
+    color: #444;
+}
+
+/* Контейнер для списка товаров */
+.category-list-container {
+    padding-top: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Сетка товаров */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка товара */
+.category-card {
+    display: grid;
+    background: #e1cfcf;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение товара */
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Информация о товаре */
+.category-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+.category-info h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.category-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 15px;
+}
+
+/* Цена товара */
+.category-price {
+    font-size: 16px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Кнопка добавления в корзину */
+.add-to-cart-btn,
+.out-of-stock-btn {
+  width: 200px;
+  padding: 12px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+
+.out-of-stock-btn {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+}
+
+.out-of-stock-btn:disabled {
+  background-color: #6c757d;
+}
+
+.category-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}

@@ -1,0 +1,41 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+<title>
+    {% block title %}
+    Categories list
+    {% endblock %}
+</title>
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/categories_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Categories List</h1>
+<div class="category-list-container">
+    <div class="category-grid">
+        <div class="category-card">
+            <h2><a href="{% url 'shopapp:products_list' %}"
+                   style="text-decoration: none; color:black">
+                Все категории
+            </a></h2>
+        </div>
+        {% for category in categories %}
+        <div class="category-card">
+            <div>
+                <h2><a href="{% url 'shopapp:category_products' pk=category.pk %}?category={{ category.pk }}"
+                       style="text-decoration: none; color:black">
+                    {{ category.name }}
+                </a></h2>
+            </div>
+            <div>
+                <p>{{ product.description|truncatechars:100 }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

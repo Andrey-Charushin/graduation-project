@@ -1,8 +1,7 @@
 .cart-container {
     display: grid;
-    height: 100vh;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;

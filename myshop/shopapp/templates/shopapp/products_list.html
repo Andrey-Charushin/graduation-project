@@ -17,6 +17,7 @@
 <div class="product-list-container">
     <div class="product-grid">
         {% for product in products %}
+        {% if product.is_in_stock %}
         <div class="product-card">
             <div>
                 <h2><a href="{% url 'shopapp:product_detail' pk=product.pk %}"
@@ -38,6 +39,7 @@
                 {% endif %}
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
