@@ -33,7 +33,10 @@
             </div>
             <div class="product-actions">
                 {% if product.is_in_stock %}
-                <button class="add-to-cart-btn">Добавить в корзину</button>
+                <form action="{% url 'shopapp:add_to_cart' product_id=product.id %}">
+                    <button class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
+
                 {% else %}
                 <button class="out-of-stock-btn" disabled>Товар отсутствует</button>
                 {% endif %}

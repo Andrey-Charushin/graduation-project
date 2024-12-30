@@ -1,4 +1,4 @@
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
 from django.shortcuts import redirect
@@ -11,7 +11,13 @@ class ProductDetailsView(DetailView):
 
     template_name = 'shopapp/product_detail.html'
     queryset = Product.objects.select_related('category').prefetch_related('review')
-    context_object_name = 'product'
+
+    # context_object_name = 'product'
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailsView, self).get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['cart'] = self.request.user.cart
+        return context
 
 
 class ProductsByCategoryListView(ListView):
@@ -26,13 +32,11 @@ class ProductsByCategoryListView(ListView):
         queryset = super().get_queryset()
 
         category_id = dict(self.request.GET).get('category')[0]
-        print(f"!!!!!!!!!!!!!!!!!!!!!{category_id}")
 
         if category_id:
             queryset = queryset.filter(category=category_id)
         queryset.select_related('category')
         return queryset
-
 
 
 class ProductsListView(ListView):
@@ -56,6 +60,7 @@ def cart_detail(request):
     cart = get_object_or_404(Cart, user=request.user)
     context = {
         "cart": cart,
+
     }
     return render(request, "shopapp/cart_detail.html", context=context)
 
@@ -70,11 +75,26 @@ def add_to_cart(request, product_id):
     if not created:
         cart_item.quantity += 1
     cart_item.save()
-    return redirect("shopapp:cart_detail")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def reduce_items_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    cart, _ = Cart.objects.get_or_create(user=request.user)
+
+    # Проверяем, есть ли товар уже в корзине
+    cart_item, _ = CartItem.objects.get_or_create(cart=cart, product=product)
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required
 def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
     cart_item.delete()
-    return redirect("shopapp:cart_detail")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
