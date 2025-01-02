@@ -1,9 +1,20 @@
-from django.http import HttpRequest, HttpResponseRedirect
+from django.http import HttpRequest, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
+from django.views import View
+from django.db import transaction
 from django.shortcuts import redirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Product, Cart, CartItem, Category
+from decimal import Decimal
+from .models import Product, Cart, CartItem, Category, Order, OrderItem
+
+
+class AboutView(View):
+    """Представление для отображения информации о магазине"""
+
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request, 'shopapp/about.html')
 
 
 class ProductDetailsView(DetailView):
@@ -98,3 +109,51 @@ def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
     cart_item.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+@transaction.atomic
+def order_view(request):
+    if request.method == "POST":
+        cart = request.user.cart
+        items = cart.items.select_related('product')
+        total_price = Decimal(cart.get_total())
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        address = request.POST.get("address")
+        city = request.POST.get("city")
+        zip_code = request.POST.get("zip")
+        payment_method = request.POST.get("payment_method")
+
+        # Удаление товаров со склада
+
+        # Создание объекта заказа
+        order = Order.objects.create(
+            user=request.user,
+            total_price=total_price,
+            name=name,
+            email=email,
+            phone=phone,
+            delivery_address=f'{city}, {address}, {zip_code}',
+            payment_method=payment_method,
+        )
+        for item in items:
+            if item.quantity > item.product.stock:
+                transaction.set_rollback(True)
+                messages.error(request,
+                               f"{item.product.name} отсутствует на складе в количестве {item.quantity} шт. "
+                               f"Доступно для заказа {item.product.stock}")
+                return redirect("shopapp:cart_detail")
+
+            OrderItem.objects.create(order=order, product=item.product, quantity=item.quantity)
+            item.product.stock -= item.quantity
+            item.product.save()
+            item.delete()
+
+        order.save()
+
+        messages.success(request, "Ваш заказ успешно оформлен!")
+        return redirect("shopapp:cart_detail")
+
+    return render(request, "shopapp/create_order.html")

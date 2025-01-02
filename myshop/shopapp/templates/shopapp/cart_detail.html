@@ -11,6 +11,17 @@
 {% endblock %}
 
 {% block content %}
+<div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</div>
 <div class="cart-container">
     <h2 class="cart-header">Ваша корзина</h2>
 
@@ -55,13 +66,16 @@
         {% endfor %}
     </table>
     <div class="cart-total">{{ cart.get_total }}</div>
+    <div class="cart-buttons">
+        <form action="{% url 'shopapp:create_order' %}">
+            <button class="btn btn-primary">Оформить заказ</button>
+        </form>
+
+        <button class="btn btn-secondary">Очистить корзину</button>
+    </div>
     {% else %}
     <p>В вашей корзине ещё нет товаров</p>
     {% endif %}
 
-    <div class="cart-buttons">
-        <button class="btn btn-primary">Оформить заказ</button>
-        <button class="btn btn-secondary">Очистить корзину</button>
-    </div>
 </div>
 {% endblock %}

@@ -74,13 +74,23 @@ class Order(models.Model):
         verbose_name_plural = 'orders'
 
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    products = models.ManyToManyField(Product, related_name='orders')
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    name = models.CharField(max_length=100, null=True)
+    email = models.EmailField(null=True)
+    phone = models.BigIntegerField(null=True)
     status = models.CharField(max_length=20,
                               choices=[('pending', 'Pending'), ('shipped', 'Shipped'), ('delivered', 'Delivered')],
                               default='pending')
+    delivery_address = models.TextField(null=True, blank=True)
+    payment_method = models.CharField(max_length=100, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="order_items")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
 
 
 class Review(models.Model):

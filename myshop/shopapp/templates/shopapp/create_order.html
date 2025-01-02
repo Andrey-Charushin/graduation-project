@@ -1,0 +1,58 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Оформление заказа
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/create_order.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="/order/" method="POST" class="order-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Оформление заказа</h2>
+
+    <!-- Информация о покупателе -->
+    <fieldset>
+        <legend>Личная информация</legend>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+    </fieldset>
+
+    <!-- Адрес доставки -->
+    <fieldset>
+        <legend>Адрес доставки</legend>
+        <label for="address">Адрес:</label>
+        <input type="text" id="address" name="address" placeholder="Ваш адрес" required>
+
+        <label for="city">Город:</label>
+        <input type="text" id="city" name="city" placeholder="Город" required>
+
+        <label for="zip">Почтовый индекс:</label>
+        <input type="text" id="zip" name="zip" placeholder="Индекс" required>
+    </fieldset>
+
+    <!-- Выбор способа оплаты -->
+    <fieldset>
+        <legend>Способ оплаты</legend>
+        <label>
+            <input type="radio" name="payment_method" value="card" required> Банковская карта
+        </label>
+        <label>
+            <input type="radio" name="payment_method" value="cash" required> Наличные при доставке
+        </label>
+    </fieldset>
+
+    <!-- Кнопка отправки -->
+    <button type="submit" class="btn-submit">Оформить заказ</button>
+</form>
+{% endblock %}

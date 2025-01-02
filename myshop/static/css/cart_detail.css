@@ -1,3 +1,28 @@
+.messages {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style-type:  none
+}
+
+/* Сообщение об успешном оформлении заказа */
+.success {
+    color: #3c763d; /* Темно-зеленый текст */
+}
+
+/* Сообщение об ошибке */
+.error {
+    color: #a94442; /* Темно-красный текст */
+}
+
 .cart-container {
     max-width: 800px;
     margin: 20px auto;
