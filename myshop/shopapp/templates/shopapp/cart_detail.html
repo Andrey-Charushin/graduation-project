@@ -15,12 +15,12 @@
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-            <li class="{{ message.tags }}">
-                {{ message }}
-            </li>
+        <li class="{{ message.tags }}">
+            {{ message }}
+        </li>
         {% endfor %}
     </ul>
-{% endif %}
+    {% endif %}
 </div>
 <div class="cart-container">
     <h2 class="cart-header">Ваша корзина</h2>
@@ -70,8 +70,10 @@
         <form action="{% url 'shopapp:create_order' %}">
             <button class="btn btn-primary">Оформить заказ</button>
         </form>
+        <form action="{% url 'shopapp:clear_cart' %}">
+            <button class="btn btn-secondary">Очистить корзину</button>
+        </form>
 
-        <button class="btn btn-secondary">Очистить корзину</button>
     </div>
     {% else %}
     <p>В вашей корзине ещё нет товаров</p>

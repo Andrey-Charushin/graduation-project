@@ -44,13 +44,17 @@
     </div>
 </div>
 <div class="review">
+    <form action="{% url 'shopapp:add_review' product_id=product.id %} ">
+        <button class="add-to-cart-btn">Оставить отзыв</button>
+    </form>
     {% if product.review.all %}
     <p><strong>Отзывы покупателей:</strong></p>
+    <p>Средняя оценка: {{ product.avg_score }}</p>
     {% for review in product.review.all %}
     <div class="review-item">
         <p><strong>Пользователь: </strong>{{ review.user.username }}</p>
         <p>Рейтинг: {{ review.rating }}</p>
-        <p>Создано: {{ review.created_at }}</p>
+        <p>Создано: {{ review.created_at|date:"d M Y H:i" }}</p>
         <p>Текст: {{ review.review_text }}</p>
     </div>
 

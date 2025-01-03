@@ -3,11 +3,13 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
 from django.views import View
 from django.db import transaction
+from django.db.models import Avg
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from decimal import Decimal
 from .models import Product, Cart, CartItem, Category, Order, OrderItem
+from .forms import ReviewForm
 
 
 class AboutView(View):
@@ -112,6 +114,18 @@ def remove_from_cart(request, item_id):
 
 
 @login_required
+def clear_cart(request):
+    # Получаем корзину текущего пользователя
+    cart = request.user.cart
+
+    # Очищаем корзину
+    cart.clear_cart()
+
+    # Перенаправляем пользователя на страницу корзины
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
 @transaction.atomic
 def order_view(request):
     if request.method == "POST":
@@ -125,8 +139,6 @@ def order_view(request):
         city = request.POST.get("city")
         zip_code = request.POST.get("zip")
         payment_method = request.POST.get("payment_method")
-
-        # Удаление товаров со склада
 
         # Создание объекта заказа
         order = Order.objects.create(
@@ -143,7 +155,7 @@ def order_view(request):
                 transaction.set_rollback(True)
                 messages.error(request,
                                f"{item.product.name} отсутствует на складе в количестве {item.quantity} шт. "
-                               f"Доступно для заказа {item.product.stock}")
+                               f"Доступно для заказа {item.product.stock} шт")
                 return redirect("shopapp:cart_detail")
 
             OrderItem.objects.create(order=order, product=item.product, quantity=item.quantity)
@@ -157,3 +169,19 @@ def order_view(request):
         return redirect("shopapp:cart_detail")
 
     return render(request, "shopapp/create_order.html")
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            return redirect('shopapp:product_detail', pk=product.id)
+    else:
+        form = ReviewForm()
+    return render(request, 'shopapp/add_review.html', {'form': form, 'product': product})

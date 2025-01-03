@@ -39,6 +39,15 @@ class Product(models.Model):
         """Проверка наличия товара в наличии"""
         return self.stock > 0
 
+    def avg_score(self):
+        """Подсчёт средней оценки пользователей"""
+        total_score = 0
+        count = 0
+        for review in self.review.all():
+            total_score += review.rating
+            count += 1
+        return total_score / count
+
 
 class Cart(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="cart")
@@ -52,6 +61,10 @@ class Cart(models.Model):
         for order_item in self.items.all():
             total += order_item.total_price()
         return total
+
+    def clear_cart(self):
+        # Удаляем все товары в корзине
+        self.items.all().delete()
 
 
 class CartItem(models.Model):
@@ -98,7 +111,7 @@ class Review(models.Model):
         ordering = ["-created_at", ]
         verbose_name_plural = 'reviews'
 
-    user = models.ForeignKey('auth.User', on_delete=models.PROTECT)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='review')
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     review_text = models.TextField(max_length=255, null=False, blank=True)
