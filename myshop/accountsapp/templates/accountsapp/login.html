@@ -1,15 +1,32 @@
 {% extends 'accountsapp/base.html' %}
 
+{% load static %}
+
 {% block title %}
 Login
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block content %}
-<form method="post">
-    {% csrf_token %}
+<div class="auth-container">
+    <h1>Вход</h1>
+    {% if form.errors %}
+    <div class="message error">
+        Проверьте правильность введённых данных.
+    </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
 
-    {{ form.as_p }}
+        {{ form.as_p }}
 
-    <button type="submit">Login</button>
-</form>
+        <button type="submit">Войти</button>
+    </form>
+    <a href="{% url 'accountsapp:register' %}">Зарегистрироваться</a>
+</div>
+
+
 {% endblock %}

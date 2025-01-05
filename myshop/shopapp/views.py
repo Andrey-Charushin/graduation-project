@@ -1,3 +1,4 @@
+import logging
 from django.http import HttpRequest, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
@@ -12,10 +13,14 @@ from .models import Product, Cart, CartItem, Category, Order, OrderItem
 from .forms import ReviewForm
 
 
+
+log = logging.getLogger(__name__)
+
 class AboutView(View):
     """Представление для отображения информации о магазине"""
 
     def get(self, request: HttpRequest) -> HttpResponse:
+        log.info('Render about view')
         return render(request, 'shopapp/about.html')
 
 

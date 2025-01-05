@@ -1,3 +1,4 @@
+import logging
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -8,11 +9,12 @@ from django.views.generic import CreateView, TemplateView
 
 from .models import Profile
 
+log = logging.getLogger(__name__)
 
 class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = "accountsapp/register.html"
-    success_url = reverse_lazy("accountsapp:about-me")
+    success_url = reverse_lazy("accountsapp:profile")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -25,12 +27,17 @@ class RegisterView(CreateView):
             password=password,
         )
         login(request=self.request, user=user)
-
+        log.info("Register user %s with username %s", user, username)
         return response
 
 
 class AboutMeView(LoginRequiredMixin, TemplateView):
     template_name = "accountsapp/about_me.html"
+
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        log.info('Profile %s', request.user.username)
+        return self.render_to_response(context)
 
 
 def login_view(request: HttpRequest):

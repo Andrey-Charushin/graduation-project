@@ -1,14 +1,28 @@
 {% extends 'accountsapp/base.html' %}
 
+{% load static %}
+
 {% block title %}
 Register
 {% endblock %}
 
-{% block body %}
-<h1>Register</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register">
-</form>
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+        <h1>Регистрация</h1>
+        {% if form.errors %}
+            <div class="message error">
+                Проверьте правильность введённых данных.
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <a href="{% url 'accountsapp:login' %}">Уже есть аккаунт? Войти</a>
+    </div>
 {% endblock %}

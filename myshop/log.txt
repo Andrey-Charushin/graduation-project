@@ -1,0 +1,185 @@
+2025-01-05 13:42:28,744 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\myshop\settings.py changed, reloading.
+2025-01-05 13:42:29,814 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 13:43:02,506 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:02,788 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:03,063 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:03,284 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:03,507 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:03,723 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:03,915 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:04,102 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:04,274 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:04,596 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:04,821 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:43:05,022 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:45:30,789 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\accountsapp\views.py changed, reloading.
+2025-01-05 13:45:31,676 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 13:46:53,792 [WARNING] django.request: Not Found: /search/
+2025-01-05 13:47:45,756 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:52:29,780 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:52:30,651 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:52:30,868 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:52:31,075 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:53:04,962 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:53:20,295 [WARNING] django.request: Not Found: /accounts/about-me
+2025-01-05 13:53:38,209 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:55:00,197 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:55:01,068 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:55:06,877 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:56:14,283 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:56:15,226 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:56:15,421 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:56:15,595 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:56:17,326 [WARNING] django.request: Not Found: /accounts/login/{% url 'accountsapp:register'
+2025-01-05 13:57:56,812 [INFO] accountsapp.views: Profile Ann
+2025-01-05 13:58:58,038 [INFO] accountsapp.views: Profile Ann
+2025-01-05 14:01:42,551 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\accountsapp\views.py changed, reloading.
+2025-01-05 14:01:43,777 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 14:03:25,133 [INFO] shopapp.views: Render about view
+2025-01-05 14:03:26,319 [WARNING] django.request: Not Found: /contact/
+2025-01-05 14:04:17,139 [INFO] accountsapp.views: Profile Sam
+2025-01-05 14:06:24,352 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\accountsapp\views.py changed, reloading.
+2025-01-05 14:06:25,124 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 14:06:55,729 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:06:56,762 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:06:57,184 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:06:57,443 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:06:58,305 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:07:10,400 [INFO] accountsapp.views: Profile Sam
+2025-01-05 14:07:51,828 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\accountsapp\views.py changed, reloading.
+2025-01-05 14:07:52,712 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 14:08:24,496 [INFO] accountsapp.views: Register user Sam with username Sam
+2025-01-05 14:08:24,513 [INFO] accountsapp.views: Profile Sam
+2025-01-05 14:11:39,277 [INFO] shopapp.views: Render about view
+2025-01-05 14:11:40,297 [INFO] accountsapp.views: Profile Sam
+2025-01-05 14:12:36,469 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\myshop\settings.py changed, reloading.
+2025-01-05 14:13:01,832 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-05 14:19:56,794 [INFO] accountsapp.views: Profile Ann
+2025-01-05 14:20:02,224 [INFO] accountsapp.views: Profile Ann
+2025-01-05 14:22:18,598 [INFO] accountsapp.views: Profile Ann
+2025-01-05 14:33:34,971 [INFO] accountsapp.views: Profile Ann
+2025-01-05 14:35:46,050 [ERROR] django.request: Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+2025-01-05 14:35:55,383 [WARNING] django.request: Not Found: /accounts/register/{% static 'css/login.css'
+2025-01-05 14:38:02,634 [WARNING] django.request: Not Found: /favicon.ico
+2025-01-05 14:38:04,320 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:38:23,773 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:40:33,913 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:40:33,951 [ERROR] django.request: Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+2025-01-05 14:40:52,324 [INFO] accountsapp.views: Profile Andrey
+2025-01-05 14:41:18,792 [INFO] accountsapp.views: Profile Ann
