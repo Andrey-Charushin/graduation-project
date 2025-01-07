@@ -1,4 +1,87 @@
 /* Общие стили */
+
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin: 20px;
+}
+
+.filter-dropdown:focus-within .filter-menu {
+    display: block;
+}
+
+/* Кнопка для открытия меню */
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Скрытое меню */
+.filter-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 250px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Показываем меню при наведении на родительский элемент */
+.filter-dropdown:hover .filter-menu {
+    display: block;
+}
+
+/* Стили для полей формы */
+.filter-menu form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-menu form input[type="number"],
+.filter-menu form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.filter-menu form button {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-menu form button:hover {
+    background-color: #0056b3;
+}
+
 content {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -119,4 +202,21 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   padding: 0;
+}
+
+.update-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    background-color: #28a745;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #218838;
 }

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
 
 class Category(models.Model):
@@ -36,17 +37,26 @@ class Product(models.Model):
         return self.name
 
     def is_in_stock(self):
-        """Проверка наличия товара в наличии"""
+        """Проверка наличия товара на складе"""
         return self.stock > 0
 
-    def avg_score(self):
-        """Подсчёт средней оценки пользователей"""
-        total_score = 0
-        count = 0
-        for review in self.review.all():
-            total_score += review.rating
-            count += 1
-        return total_score / count
+    def average_rating(self):
+        """Вычисляет средний рейтинг для продукта на основе отзвов пользователей"""
+        avg_rating = self.review.aggregate(average=Avg('rating'))['average']
+        return round(avg_rating, 2) if avg_rating else "Нет отзывов"
+
+
+def product_images_directory_path(instance: "ProductImage", filename: str) -> str:
+    return "products/product_{pk}/images/{filename}".format(
+        pk=instance.product.pk,
+        filename=filename
+    )
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to=product_images_directory_path)
+    description = models.CharField(max_length=200, null=False, blank=True)
 
 
 class Cart(models.Model):
@@ -86,13 +96,18 @@ class Order(models.Model):
         ordering = ["-created_at", "updated_at"]
         verbose_name_plural = 'orders'
 
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='orders')
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     name = models.CharField(max_length=100, null=True)
     email = models.EmailField(null=True)
     phone = models.BigIntegerField(null=True)
     status = models.CharField(max_length=20,
-                              choices=[('pending', 'Pending'), ('shipped', 'Shipped'), ('delivered', 'Delivered')],
+                              choices=[
+                                  ('pending', 'Ожидается'),
+                                  ('processing', 'В обработке'),
+                                  ('completed', 'Завершен'),
+                                  ('canceled', 'Отменен'),
+                              ],
                               default='pending')
     delivery_address = models.TextField(null=True, blank=True)
     payment_method = models.CharField(max_length=100, null=True)
@@ -104,6 +119,9 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="order_items")
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
+
+    def total_price(self):
+        return self.product.price * self.quantity
 
 
 class Review(models.Model):

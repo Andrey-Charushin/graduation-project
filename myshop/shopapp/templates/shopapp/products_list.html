@@ -13,6 +13,17 @@
 {% endblock %}
 
 {% block content %}
+<div class="filter-dropdown">
+    <button class="filter-btn">Фильтры</button>
+    <div class="filter-menu">
+        <form method="get" class="filter-form">
+            {{ filter.form.as_p }}
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+
+</div>
+
 <h1>Product List</h1>
 <div class="product-list-container">
     <div class="product-grid">
@@ -31,6 +42,9 @@
             <div>
                 <p class="product-price">${{ product.price }}</p>
             </div>
+            <div>
+                <p class="product-score">Оценка пользователей: {{ product.average_rating }}</p>
+            </div>
             <div class="product-actions">
                 {% if product.is_in_stock %}
                 <form action="{% url 'shopapp:add_to_cart' product_id=product.id %}">
@@ -45,6 +59,12 @@
         {% endif %}
         {% endfor %}
     </div>
+    {% if user.is_superuser %}
+    <form action="{% url 'shopapp:product_create' %}">
+        <button class="update-btn">Создать новый продукт</button>
+    </form>
+</div>
+{% endif %}
 </div>
 {% endblock %}
 

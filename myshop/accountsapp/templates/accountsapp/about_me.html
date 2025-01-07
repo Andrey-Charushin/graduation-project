@@ -12,6 +12,17 @@ About me
 {% endblock %}
 
 {% block content %}
+<div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
 <div class="profile-container">
     <div class="profile-header">
         <h1>Добро пожаловать, {{ user.username }}!</h1>
@@ -20,13 +31,56 @@ About me
         <h2>Ваши данные</h2>
         <ul>
             <li><strong>Имя пользователя:</strong> {{ user.username }}</li>
+            <li><strong>Имя:</strong> {{ user.first_name }}</li>
+            <li><strong>Фамилия:</strong> {{ user.last_name }}</li>
             <li><strong>Email:</strong> {{ user.email }}</li>
             <li><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}</li>
+            <li><strong>О себе:</strong>
+                {% if user.profile.about %}
+                    {{ user.profile.about }}
+                {% endif %}
+            </li>
         </ul>
     </div>
     <div class="profile-actions">
+        <a href="{% url 'accountsapp:edit_profile' %}" class="button edit">Редактировать профиль</a>
         <a href="{% url 'accountsapp:logout' %}" class="button logout">Выйти</a>
     </div>
+    {% if user.is_staff %}
+    <a href="{% url 'shopapp:orders_list' %}" class="button edit">Заказы</a>
+    {% else %}
+    {% if user.orders %}
+    <div class="profile-details">
+        <h2>Ваши заказы</h2>
+        {% for order in user.orders.all %}
+        <strong>Статус:</strong> {{ order.status }}
+        <table class="order-table">
+            <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Итого</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in order.order_items.all %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.total_price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="order-total">{{ order.total_price }}</div>
+        {% endfor %}
+    </div>
+    {% else %}
+    {% endif %}
+    {% endif %}
+
 </div>
 
 {% endblock %}

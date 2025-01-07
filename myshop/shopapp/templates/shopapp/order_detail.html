@@ -1,0 +1,55 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/order_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="order-details">
+<h2>Детали заказа #{{ order.id }}</h2>
+    <h3>Информация о заказе</h3>
+    <p><strong>Пользователь:</strong> {{ order.user.username }}</p>
+    <p><strong>Имя:</strong> {{ order.name }}</p>
+    <p><strong>E-mail:</strong> {{ order.email }}</p>
+    <p><strong>Телефон:</strong> {{ order.phone }}</p>
+    <p><strong>Адрес:</strong> {{ order.delivery_address }}</p>
+    <p><strong>Способ оплаты:</strong> {{ order.payment_method }}</p>
+    <p><strong>Дата создания:</strong> {{ order.created_at|date:"d.m.Y H:i" }}</p>
+    <p><strong>Статус:</strong> <span class="status {{ order.status|lower }}">{{ order.get_status_display }}</span></p>
+    <p><strong>Итоговая сумма:</strong> {{ order.total_price }} ₽</p>
+</div>
+
+<div class="order-items">
+    <h3>Товары в заказе</h3>
+    <table class="order-items-table">
+        <thead>
+        <tr>
+            <th>Товар</th>
+            <th>Количество</th>
+            <th>Цена за единицу</th>
+            <th>Общая стоимость</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in order.order_items.all %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price }} ₽</td>
+            <td>{{ item.total_price }} ₽</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<a class="btn btn-back" href="{% url 'shopapp:orders_list' %}">Вернуться к списку заказов</a>
+
+{% endblock %}

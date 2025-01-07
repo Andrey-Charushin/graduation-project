@@ -1,0 +1,25 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Create product
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/update_product.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1>Создание продукта</h1>
+<div class="update-container">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Создать</button>
+      <button type="button" class="cancel" onclick="window.history.back();">Отмена</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

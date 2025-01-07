@@ -1,0 +1,46 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+<title>
+    {% block title %}
+    Список заказов
+    {% endblock %}
+</title>
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/orders_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Список заказов</h2>
+<table class="order-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Пользователь</th>
+            <th>Дата создания</th>
+            <th>Статус</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td><a href="{% url 'shopapp:order_detail' order.id %}">{{ order.id }}</a></td>
+            <td>{{ order.user.username }}</td>
+            <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+            <td>
+                <span class="status {{ order.status|lower }}">
+                    {{ order.get_status_display }}
+                </span>
+            </td>
+            <td>
+                <a class="btn" href="{% url 'shopapp:order_update' order.id %}">Изменить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

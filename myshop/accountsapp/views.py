@@ -1,13 +1,17 @@
 import logging
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, TemplateView
 
 from .models import Profile
+from .forms import EditProfileForm
 
 log = logging.getLogger(__name__)
 
@@ -39,25 +43,21 @@ class AboutMeView(LoginRequiredMixin, TemplateView):
         log.info('Profile %s', request.user.username)
         return self.render_to_response(context)
 
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Ваш профиль был успешно обновлен!')
+            return redirect('accountsapp:profile')
+    else:
+        form = EditProfileForm(instance=request.user)
 
-def login_view(request: HttpRequest):
-    if request.method == "GET":
-        if request.user.is_authenticated:
-            return redirect('/products')
-
-        return render(request, 'accountsapp/login.html')
-
-    username = request.POST["username"]
-    password = request.POST["password"]
-
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return redirect('/products')
-
-    return render(request, 'accountsapp/login.html', {"error": "Invalid login credentials"})
+    return render(request, 'accountsapp/edit_profile.html', {'form': form})
 
 
 def logout_view(request: HttpRequest):
     logout(request)
     return redirect(reverse("accountsapp:login"))
+

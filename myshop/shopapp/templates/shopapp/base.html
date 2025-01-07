@@ -24,13 +24,13 @@
         <nav class="navigation">
             <ul>
                 <li><a href="/">Главная</a></li>
-                <li><a href="/products/">Каталог</a></li>
-                <li><a href="/about/">О нас</a></li>
+                <li><a href="{% url 'shopapp:products_list' %}">Каталог</a></li>
+                <li><a href="{% url 'shopapp:about' %}">О нас</a></li>
                 <li><a href="/contact/">Контакты</a></li>
             </ul>
         </nav>
         <div class="header-actions">
-            <form action="/search/" method="get" class="search-form">
+            <form action="{% url 'shopapp:products_list' %}" method="get" class="search-form">
                 <input type="text" name="query" placeholder="Поиск товаров...">
                 <button type="submit">🔍</button>
             </form>
@@ -53,7 +53,7 @@ Base content
             <div class="footer-section">
                 <h4>О компании</h4>
                 <ul>
-                    <li><a href="/about">О нас</a></li>
+                    <li><a href="{% url 'shopapp:about' %}">О нас</a></li>
                     <li><a href="/contact">Контакты</a></li>
                     <li><a href="/privacy-policy">Политика конфиденциальности</a></li>
                 </ul>

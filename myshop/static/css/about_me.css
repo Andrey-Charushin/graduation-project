@@ -1,3 +1,28 @@
+.messages {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style-type:  none
+}
+
+/* Сообщение об успешном изменении профиля */
+.success {
+    color: #3c763d; /* Темно-зеленый текст */
+}
+
+/* Сообщение об ошибке */
+.error {
+    color: #a94442; /* Темно-красный текст */
+}
+
 content {
     margin: 0;
     padding: 0;
@@ -83,4 +108,38 @@ content {
 
 .edit:hover {
     background-color: #218838;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-table th, .order-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.order-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+/* Итоговая сумма */
+.order-total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #333;
 }

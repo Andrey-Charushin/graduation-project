@@ -1,0 +1,26 @@
+{% extends 'shopapp/base.html' %}
+
+{% load static %}
+
+<title>
+    {% block title %}
+    Список заказов
+    {% endblock %}
+</title>
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/orders_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+<h2>Изменение статуса заказа #{{ object.id }}</h2>
+    <form method="post" class="order-update-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-submit">Сохранить</button>
+    </form>
+<a class="btn btn-back" href="{% url 'shopapp:orders_list' %}">Вернуться к списку</a>
+</div>
+{% endblock %}
+

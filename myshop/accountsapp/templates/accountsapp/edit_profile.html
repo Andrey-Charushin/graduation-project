@@ -1,0 +1,24 @@
+{% extends 'accountsapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Редактирование профиля
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/edit_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Редактирование профиля</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'accountsapp:password_change' %}">Сменить пароль</a>
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <a href="{% url 'accountsapp:profile' %}" class="btn btn-secondary">Отменить</a>
+    </form>
+</div>
+{% endblock %}

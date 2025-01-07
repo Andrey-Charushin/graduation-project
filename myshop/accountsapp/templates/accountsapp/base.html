@@ -30,7 +30,7 @@
             </ul>
         </nav>
         <div class="header-actions">
-            <form action="/search/" method="get" class="search-form">
+            <form action="{% url 'shopapp:products_list' %}" method="get" class="search-form">
                 <input type="text" name="query" placeholder="Поиск товаров...">
                 <button type="submit">🔍</button>
             </form>

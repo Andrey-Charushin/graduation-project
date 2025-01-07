@@ -104,6 +104,23 @@
   background-color: #6c757d;
 }
 
+.update-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    background-color: #28a745;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #218838;
+}
+
 /* Стили для блока "В наличии" */
 .product-info p strong {
   font-weight: bold;

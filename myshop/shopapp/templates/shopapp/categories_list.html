@@ -25,7 +25,7 @@
         {% for category in categories %}
         <div class="category-card">
             <div>
-                <h2><a href="{% url 'shopapp:category_products' pk=category.pk %}?category={{ category.pk }}"
+                <h2><a href="{% url 'shopapp:products_list' %}?category={{ category.pk }}"
                        style="text-decoration: none; color:black">
                     {{ category.name }}
                 </a></h2>
