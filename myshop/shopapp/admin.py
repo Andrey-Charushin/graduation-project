@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Product, Category, Order, Review, OrderItem
 
 
-# Register your models here.
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = "pk", "name", "description", "price", "stock", "category", "created_at", "updated_at"

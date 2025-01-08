@@ -1,0 +1,26 @@
+[
+  {
+    "model": "shopapp.category",
+    "pk": 1,
+    "fields": {
+      "name": "Laptops",
+      "description": "All laptops"
+    }
+  },
+  {
+    "model": "shopapp.category",
+    "pk": 2,
+    "fields": {
+      "name": "Smartphones",
+      "description": "All smartphones"
+    }
+  },
+  {
+    "model": "shopapp.category",
+    "pk": 3,
+    "fields": {
+      "name": "Headphones",
+      "description": "All headphones"
+    }
+  }
+]

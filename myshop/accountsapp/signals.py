@@ -5,5 +5,6 @@ from shopapp.models import Cart
 
 @receiver(post_save, sender=User)
 def create_user_cart(sender, instance, created, **kwargs):
+    """Создание корзины при регистрации пользователя"""
     if created:
         Cart.objects.create(user=instance)

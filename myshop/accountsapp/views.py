@@ -15,7 +15,10 @@ from .forms import EditProfileForm
 
 log = logging.getLogger(__name__)
 
+
 class RegisterView(CreateView):
+    """Представление для регистрации пользователя"""
+
     form_class = UserCreationForm
     template_name = "accountsapp/register.html"
     success_url = reverse_lazy("accountsapp:profile")
@@ -36,6 +39,8 @@ class RegisterView(CreateView):
 
 
 class AboutMeView(LoginRequiredMixin, TemplateView):
+    """Представление для отображения информации о пользователе"""
+
     template_name = "accountsapp/about_me.html"
 
     def get(self, request, *args, **kwargs):
@@ -43,8 +48,10 @@ class AboutMeView(LoginRequiredMixin, TemplateView):
         log.info('Profile %s', request.user.username)
         return self.render_to_response(context)
 
+
 @login_required
 def edit_profile(request):
+    """Представление для изменения данных в профиле"""
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
         if form.is_valid():
@@ -60,4 +67,3 @@ def edit_profile(request):
 def logout_view(request: HttpRequest):
     logout(request)
     return redirect(reverse("accountsapp:login"))
-

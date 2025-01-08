@@ -46,20 +46,9 @@ class Product(models.Model):
         return round(avg_rating, 2) if avg_rating else "Нет отзывов"
 
 
-def product_images_directory_path(instance: "ProductImage", filename: str) -> str:
-    return "products/product_{pk}/images/{filename}".format(
-        pk=instance.product.pk,
-        filename=filename
-    )
-
-
-class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
-    image = models.ImageField(upload_to=product_images_directory_path)
-    description = models.CharField(max_length=200, null=False, blank=True)
-
-
 class Cart(models.Model):
+    """Модель корзины"""
+
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="cart")
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -67,26 +56,30 @@ class Cart(models.Model):
         return f"Cart of {self.user.username}"
 
     def get_total(self):
+        """Вычисление общей стоимости товаров в корзине"""
+
         total = 0
         for order_item in self.items.all():
             total += order_item.total_price()
         return total
 
     def clear_cart(self):
-        # Удаляем все товары в корзине
+        """Удаление всех товаров из корзины"""
+
         self.items.all().delete()
 
 
 class CartItem(models.Model):
+    """Модель для товаров в корзине"""
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name="items")
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
-    def __str__(self):
-        return f"{self.quantity} x {self.product.name}"
-
     def total_price(self):
         return self.product.price * self.quantity
+
+    def __str__(self):
+        return f"{self.quantity} x {self.product.name}"
 
 
 class Order(models.Model):
@@ -96,8 +89,8 @@ class Order(models.Model):
         ordering = ["-created_at", "updated_at"]
         verbose_name_plural = 'orders'
 
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='orders')
-    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     name = models.CharField(max_length=100, null=True)
     email = models.EmailField(null=True)
     phone = models.BigIntegerField(null=True)
@@ -116,6 +109,8 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    """Модель для товара в заказе"""
+
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="order_items")
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
@@ -125,6 +120,8 @@ class OrderItem(models.Model):
 
 
 class Review(models.Model):
+    """Модель пользовательского отзыва на товар"""
+
     class Meta:
         ordering = ["-created_at", ]
         verbose_name_plural = 'reviews'

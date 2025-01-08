@@ -5061,3 +5061,203 @@ django.template.exceptions.TemplateDoesNotExist: order_detail.html
 2025-01-07 18:52:50,478 [WARNING] django.request: Not Found: /favicon.ico
 2025-01-07 18:54:05,633 [WARNING] django.request: Not Found: /favicon.ico
 2025-01-07 18:54:41,437 [WARNING] django.request: Not Found: /favicon.ico
+2025-01-08 18:34:45,861 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-08 18:36:57,178 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-08 18:38:57,052 [WARNING] django.request: Not Found: /favicon.ico
+2025-01-08 18:38:59,651 [INFO] shopapp.views: Render about view
+2025-01-08 18:39:43,816 [INFO] shopapp.views: Render about view
+2025-01-08 18:40:34,125 [INFO] shopapp.views: Render contacts view
+2025-01-08 18:50:41,488 [INFO] shopapp.views: Render about view
+2025-01-08 18:50:41,506 [INFO] shopapp.views: Render contacts view
+2025-01-08 18:57:24,446 [INFO] shopapp.views: Render about view
+2025-01-08 18:57:24,462 [INFO] shopapp.views: Render contacts view
+2025-01-08 18:57:44,654 [INFO] shopapp.views: Render about view
+2025-01-08 18:57:44,669 [INFO] shopapp.views: Render contacts view
+2025-01-08 18:58:04,223 [INFO] shopapp.views: Render about view
+2025-01-08 18:58:04,238 [INFO] shopapp.views: Render contacts view
+2025-01-08 18:58:04,243 [WARNING] django.request: Not Found: /product/1/
+2025-01-08 18:59:46,837 [INFO] shopapp.views: Render about view
+2025-01-08 18:59:46,856 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:01:06,366 [INFO] shopapp.views: Render about view
+2025-01-08 19:01:06,382 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:02:38,027 [INFO] shopapp.views: Render about view
+2025-01-08 19:02:38,044 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:02:49,712 [INFO] shopapp.views: Render about view
+2025-01-08 19:02:49,727 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:05:04,059 [INFO] shopapp.views: Render about view
+2025-01-08 19:05:04,072 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:05:13,093 [INFO] shopapp.views: Render about view
+2025-01-08 19:05:13,107 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:05:13,113 [WARNING] django.request: Not Found: /product/1/
+2025-01-08 19:05:38,317 [INFO] shopapp.views: Render about view
+2025-01-08 19:05:38,334 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:05:38,339 [WARNING] django.request: Not Found: /product/1/
+2025-01-08 19:07:16,451 [INFO] shopapp.views: Render about view
+2025-01-08 19:07:16,467 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:07:16,473 [WARNING] django.request: Not Found: /product/1/
+2025-01-08 19:12:11,634 [INFO] shopapp.views: Render about view
+2025-01-08 19:12:11,651 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:12:37,417 [INFO] shopapp.views: Render about view
+2025-01-08 19:12:37,434 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:13:34,653 [INFO] shopapp.views: Render about view
+2025-01-08 19:13:34,667 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:19:35,237 [INFO] shopapp.views: Render about view
+2025-01-08 19:19:35,252 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:19:53,195 [INFO] shopapp.views: Render about view
+2025-01-08 19:19:53,210 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:22:28,607 [INFO] shopapp.views: Render about view
+2025-01-08 19:22:28,623 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:25:47,723 [INFO] shopapp.views: Render about view
+2025-01-08 19:25:47,737 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:26:53,511 [INFO] shopapp.views: Render about view
+2025-01-08 19:26:53,524 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:27:59,341 [INFO] shopapp.views: Render about view
+2025-01-08 19:27:59,355 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:29:35,993 [INFO] shopapp.views: Render about view
+2025-01-08 19:29:36,008 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:30:57,976 [INFO] shopapp.views: Render about view
+2025-01-08 19:30:57,992 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:35:48,264 [INFO] shopapp.views: Render about view
+2025-01-08 19:35:48,280 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:36:50,729 [INFO] accountsapp.views: Profile Andrey
+2025-01-08 19:40:29,429 [INFO] shopapp.views: Render about view
+2025-01-08 19:40:29,449 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:44:51,314 [INFO] shopapp.views: Render about view
+2025-01-08 19:44:51,329 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:45:15,856 [INFO] shopapp.views: Render about view
+2025-01-08 19:45:15,870 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:46:09,788 [INFO] shopapp.views: Render about view
+2025-01-08 19:46:09,804 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:46:36,038 [WARNING] django.request: Not Found: /ru/blog/articles/latest/feed/
+2025-01-08 19:46:57,084 [INFO] shopapp.views: Render about view
+2025-01-08 19:46:57,101 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:48:12,906 [INFO] shopapp.views: Render about view
+2025-01-08 19:48:12,923 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:49:09,929 [INFO] shopapp.views: Render about view
+2025-01-08 19:49:09,947 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:49:46,870 [INFO] shopapp.views: Render about view
+2025-01-08 19:49:46,885 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:50:38,430 [INFO] shopapp.views: Render about view
+2025-01-08 19:50:38,448 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:52:01,006 [INFO] shopapp.views: Render about view
+2025-01-08 19:52:01,024 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:56:35,856 [INFO] shopapp.views: Render about view
+2025-01-08 19:56:35,877 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:57:50,051 [INFO] shopapp.views: Render about view
+2025-01-08 19:57:50,068 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:58:12,759 [INFO] shopapp.views: Render about view
+2025-01-08 19:58:12,774 [INFO] shopapp.views: Render contacts view
+2025-01-08 19:58:23,944 [INFO] shopapp.views: Render about view
+2025-01-08 19:58:23,959 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:22:03,724 [INFO] shopapp.views: Render about view
+2025-01-08 20:22:03,776 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:52:31,634 [INFO] shopapp.views: Render about view
+2025-01-08 20:52:32,446 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:53:09,602 [INFO] shopapp.views: Render about view
+2025-01-08 20:53:11,159 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:54:28,111 [INFO] shopapp.views: Render about view
+2025-01-08 20:54:29,671 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:55:05,980 [INFO] shopapp.views: Render about view
+2025-01-08 20:55:07,547 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:56:06,506 [INFO] shopapp.views: Render about view
+2025-01-08 20:56:08,073 [INFO] shopapp.views: Render contacts view
+2025-01-08 20:59:13,115 [INFO] shopapp.views: Render about view
+2025-01-08 20:59:13,913 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:00:00,645 [INFO] shopapp.views: Render about view
+2025-01-08 21:00:01,453 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:01:37,667 [INFO] shopapp.views: Render about view
+2025-01-08 21:01:38,490 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:02:48,487 [INFO] shopapp.views: Render about view
+2025-01-08 21:02:49,308 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:04:34,217 [INFO] shopapp.views: Render about view
+2025-01-08 21:04:35,862 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:04:56,468 [INFO] shopapp.views: Render about view
+2025-01-08 21:04:58,021 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:14:04,065 [INFO] shopapp.views: Render about view
+2025-01-08 21:14:05,612 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:14:07,120 [WARNING] django.request: Forbidden (Permission denied): /orders/
+Traceback (most recent call last):
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Education\Graduation_project\Internet_shop\.venv\Lib\site-packages\django\contrib\auth\mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2025-01-08 21:15:09,532 [INFO] shopapp.views: Render about view
+2025-01-08 21:15:11,089 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:22:20,033 [INFO] shopapp.views: Render about view
+2025-01-08 21:22:21,601 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:23:02,956 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\shopapp\models.py changed, reloading.
+2025-01-08 21:23:03,872 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-08 21:23:17,815 [INFO] shopapp.views: Render about view
+2025-01-08 21:23:19,377 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:23:47,777 [INFO] django.utils.autoreload: C:\Education\Graduation_project\Internet_shop\myshop\shopapp\models.py changed, reloading.
+2025-01-08 21:23:48,498 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-08 21:23:57,803 [INFO] shopapp.views: Render about view
+2025-01-08 21:23:59,348 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:38:45,810 [INFO] shopapp.views: Render about view
+2025-01-08 21:38:47,362 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:47:57,415 [INFO] shopapp.views: Render about view
+2025-01-08 21:47:58,973 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:53:06,058 [INFO] shopapp.views: Render about view
+2025-01-08 21:53:07,674 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:55:56,901 [INFO] shopapp.views: Render about view
+2025-01-08 21:55:58,474 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:56:57,406 [INFO] shopapp.views: Render about view
+2025-01-08 21:56:58,990 [INFO] shopapp.views: Render contacts view
+2025-01-08 21:59:56,404 [INFO] shopapp.views: Render about view
+2025-01-08 21:59:57,980 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:00:29,355 [INFO] shopapp.views: Render about view
+2025-01-08 22:00:30,904 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:01:05,514 [INFO] shopapp.views: Render about view
+2025-01-08 22:01:07,237 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:02:26,886 [INFO] shopapp.views: Render about view
+2025-01-08 22:02:28,472 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:04:28,371 [INFO] shopapp.views: Render about view
+2025-01-08 22:04:29,947 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:05:05,248 [INFO] shopapp.views: Render about view
+2025-01-08 22:05:06,812 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:07:05,518 [INFO] shopapp.views: Render about view
+2025-01-08 22:07:07,082 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:09:01,408 [INFO] shopapp.views: Render about view
+2025-01-08 22:09:02,951 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:10:16,923 [INFO] shopapp.views: Render about view
+2025-01-08 22:10:18,541 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:12:40,488 [INFO] shopapp.views: Render about view
+2025-01-08 22:12:42,040 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:13:43,918 [INFO] shopapp.views: Render about view
+2025-01-08 22:13:45,477 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:14:19,607 [INFO] shopapp.views: Render about view
+2025-01-08 22:14:21,158 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:15:52,318 [INFO] shopapp.views: Render about view
+2025-01-08 22:15:53,893 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:16:23,431 [INFO] shopapp.views: Render about view
+2025-01-08 22:16:25,004 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:18:00,696 [INFO] shopapp.views: Render about view
+2025-01-08 22:18:02,282 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:20:34,723 [INFO] shopapp.views: Render about view
+2025-01-08 22:20:36,296 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:22:29,900 [INFO] shopapp.views: Render about view
+2025-01-08 22:22:31,457 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:22:53,954 [INFO] shopapp.views: Render about view
+2025-01-08 22:22:55,514 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:24:31,605 [INFO] shopapp.views: Render about view
+2025-01-08 22:24:33,161 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:25:33,651 [INFO] shopapp.views: Render about view
+2025-01-08 22:25:35,207 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:25:49,638 [INFO] shopapp.views: Render about view
+2025-01-08 22:25:51,262 [INFO] shopapp.views: Render contacts view
+2025-01-08 22:29:20,125 [INFO] shopapp.views: Render about view
+2025-01-08 22:29:21,672 [INFO] shopapp.views: Render contacts view

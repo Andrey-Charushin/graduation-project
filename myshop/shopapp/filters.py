@@ -2,7 +2,10 @@ from django_filters import FilterSet, NumberFilter, ModelChoiceFilter
 from .models import Product, Category
 from django.db.models import Avg
 
+
 class ProductFilter(FilterSet):
+    """Фильтр для списка продуктов"""
+
     price_min = NumberFilter(field_name='price', lookup_expr='gte', label='Цена мин.')
     price_max = NumberFilter(field_name='price', lookup_expr='lte', label='Цена макс.')
     category = ModelChoiceFilter(queryset=Category.objects.all(), label='Категория')

@@ -40,6 +40,7 @@ class ContactsView(View):
 
 
 class ProductViewSet(ModelViewSet):
+    """Представления товара для API"""
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filterset_fields = [
@@ -58,25 +59,6 @@ class ProductViewSet(ModelViewSet):
         "name",
         "price",
     ]
-
-
-class ProductsByCategoryListView(ListView):
-    """Представление для отображения списка товаров в выбранной категории"""
-
-    model = Product
-    template_name = 'shopapp/products_list.html'
-    # queryset = Product.objects.filter(category=category_id).select_related('category').prefetch_related('review')
-    context_object_name = 'products'
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-
-        category_id = dict(self.request.GET).get('category')[0]
-
-        if category_id:
-            queryset = queryset.filter(category=category_id)
-        queryset.select_related('category')
-        return queryset
 
 
 class ProductsListView(FilterView):
@@ -121,6 +103,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
 
 class ProductUpdateView(LoginRequiredMixin, UpdateView):
     """Представление для редактирования товара"""
+
     model = Product
     fields = "name", "price", "description", "stock", "image", "category"
     template_name_suffix = "_update_form"
@@ -154,6 +137,8 @@ def cart_detail(request):
 
 @login_required
 def add_to_cart(request, product_id):
+    """Представление для добавления единицы товара в корзину авторизованного пользователя"""
+
     product = get_object_or_404(Product, id=product_id)
     cart, _ = Cart.objects.get_or_create(user=request.user)
 
@@ -167,6 +152,8 @@ def add_to_cart(request, product_id):
 
 @login_required
 def reduce_items_cart(request, product_id):
+    """Удаление единицы товара из корзины"""
+
     product = get_object_or_404(Product, id=product_id)
     cart, _ = Cart.objects.get_or_create(user=request.user)
 
@@ -182,6 +169,8 @@ def reduce_items_cart(request, product_id):
 
 @login_required
 def remove_from_cart(request, item_id):
+    """Удаление товара из корзины не зависимо от количества"""
+
     cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
     cart_item.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
@@ -189,19 +178,19 @@ def remove_from_cart(request, item_id):
 
 @login_required
 def clear_cart(request):
-    # Получаем корзину текущего пользователя
-    cart = request.user.cart
+    """Удаление всех товаров из корзины"""
 
-    # Очищаем корзину
+    cart = request.user.cart
     cart.clear_cart()
 
-    # Перенаправляем пользователя на страницу корзины
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required
 @transaction.atomic
 def order_view(request):
+    """Представление для оформления заказа"""
+
     if request.method == "POST":
         cart = request.user.cart
         items = cart.items.select_related('product')
@@ -224,6 +213,8 @@ def order_view(request):
             delivery_address=f'{city}, {address}, {zip_code}',
             payment_method=payment_method,
         )
+
+        # Добавление товарова из корзины к заказу
         for item in items:
             if item.quantity > item.product.stock:
                 transaction.set_rollback(True)
@@ -276,6 +267,8 @@ def order_detail(request, order_id):
 
 @login_required
 def add_review(request, product_id):
+    """Представление для создания отзыва на товар"""
+
     product = get_object_or_404(Product, id=product_id)
     if request.method == 'POST':
         form = ReviewForm(request.POST)

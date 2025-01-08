@@ -1,0 +1,50 @@
+[
+  {
+    "model": "shopapp.order",
+    "pk": 10,
+    "fields": {
+      "user": 1,
+      "total_price": "3067.98",
+      "name": "└эфЁхщ ╫рЁє°шэ",
+      "email": "example@mail.ru",
+      "phone": 89638671545,
+      "status": "pending",
+      "delivery_address": "╤хыю ╩єярщ, ═рсхЁхцэр  7, 641063",
+      "payment_method": "card",
+      "created_at": "2025-01-02T12:51:44.444Z",
+      "updated_at": "2025-01-02T12:51:44.447Z"
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 11,
+    "fields": {
+      "user": 1,
+      "total_price": "2097.00",
+      "name": "└эфЁхщ",
+      "email": "example@mail.ru",
+      "phone": 89632581425,
+      "status": "pending",
+      "delivery_address": "╤хыю ╩єярщ, ═рсхЁхцэр  7, 641063",
+      "payment_method": "cash",
+      "created_at": "2025-01-02T13:19:43.379Z",
+      "updated_at": "2025-01-07T13:43:40.453Z"
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 25,
+    "fields": {
+      "user": 7,
+      "total_price": "1316.00",
+      "name": "Kate",
+      "email": "kate@example.com",
+      "phone": 79991112233,
+      "status": "processing",
+      "delivery_address": "╩єЁурэ, єы. ╧є°ъшэр 7, 640023",
+      "payment_method": "cash",
+      "created_at": "2025-01-07T13:26:35.312Z",
+      "updated_at": "2025-01-07T13:43:45.292Z"
+    }
+  }
+]
