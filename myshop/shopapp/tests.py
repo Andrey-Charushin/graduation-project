@@ -49,7 +49,7 @@ class ProductCreateViewTestCase(TestCase):
     def setUpClass(cls):
         cls.category = Category.objects.create(name='Test_category')
         cls.credentials = dict(username='AdminTest', password='qwerty')
-        cls.user = User.objects.create_user(**cls.credentials)
+        cls.user = User.objects.create_user(**cls.credentials, is_staff=True)
 
     @classmethod
     def tearDownClass(cls):

@@ -93,20 +93,28 @@ class ProductDetailsView(DetailView):
         return context
 
 
-class ProductCreateView(LoginRequiredMixin, CreateView):
+class ProductCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """Представление для создания товара"""
 
     model = Product
     fields = "name", "price", "description", "stock", "image", "category"
     success_url = reverse_lazy("shopapp:products_list")
 
+    def test_func(self):
+        # Ограничение для работников магазина
+        return self.request.user.is_staff
 
-class ProductUpdateView(LoginRequiredMixin, UpdateView):
+
+class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Представление для редактирования товара"""
 
     model = Product
     fields = "name", "price", "description", "stock", "image", "category"
     template_name_suffix = "_update_form"
+
+    def test_func(self):
+        # Ограничение для работников магазина
+        return self.request.user.is_staff
 
     def get_success_url(self):
         return reverse(
