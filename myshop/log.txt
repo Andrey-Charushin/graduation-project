@@ -5263,3 +5263,5 @@ django.core.exceptions.PermissionDenied
 2025-01-08 22:29:21,672 [INFO] shopapp.views: Render contacts view
 2025-01-08 22:46:36,118 [WARNING] django.request: Not Found: /ru/blog/articles/latest/feed/
 2025-01-09 15:33:22,826 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-09 18:30:00,993 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-01-09 18:30:06,524 [WARNING] django.request: Not Found: /favicon.ico
