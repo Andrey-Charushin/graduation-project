@@ -29,7 +29,7 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY",
                     'django-insecure-2w^1s&6-s#iqyawhz7g+zfq20+&mox8%%dz=b8=#m$h#=1r6%n')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("DJANGO_DEBUG", 0) == 1
+DEBUG = getenv("DJANGO_DEBUG", 1) == 1
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
